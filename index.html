@@ -1,218 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AM General Services</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AM General Services</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0B0B0B;
-  color: #F5F5F5;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0B0B0B;
+      color: #F5F5F5;
+    }
 
-.nav {
-  padding: 25px 0;
-  border-bottom: 1px solid #2A2A2A;
-}
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.nav a {
-  color: #F5F5F5;
-  text-decoration: none;
-}
+    .nav {
+      padding: 25px 0;
+      border-bottom: 1px solid #2A2A2A;
+    }
 
-.hero {
-  padding: 100px 0;
-}
+    .nav a {
+      color: #F5F5F5;
+      text-decoration: none;
+    }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
+    .hero {
+      padding: 100px 0;
+    }
 
-.hero h2 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
 
-.hero p {
-  color: #A0A0A0;
-  max-width: 400px;
-}
+    .hero h2 {
+      font-size: 48px;
+      margin: 0 0 12px;
+      line-height: 1.1;
+    }
 
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 28px;
-  border: 1px solid #F5F5F5;
-  text-decoration: none;
-  color: #F5F5F5;
-}
+    .hero p {
+      color: #A0A0A0;
+      max-width: 420px;
+      line-height: 1.6;
+      margin: 0;
+    }
 
-.image {
-  width: 100%;
-  height: 350px;
-  background: #1F1F1F;
-  border-radius: 12px;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      border: 1px solid #F5F5F5;
+      text-decoration: none;
+      color: #F5F5F5;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
 
-.section {
-  margin-top: 80px;
-}
+    .btn:hover {
+      background: #F5F5F5;
+      color: #0B0B0B;
+    }
 
-.section h3 {
-  margin-bottom: 20px;
-}
+    .image {
+      width: 100%;
+      height: 350px;
+      background: #1F1F1F;
+      border-radius: 16px;
+      border: 1px solid #2A2A2A;
+    }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
+    .image.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #A0A0A0;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
 
-.card {
-  display: block;
-  background: #1F1F1F;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #2A2A2A;
-  text-decoration: none;
-  color: #F5F5F5;
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
+    .section {
+      margin-top: 90px;
+    }
 
-.card:hover {
-  transform: translateY(-4px);
-  border-color: #A0A0A0;
-}
+    .section h3 {
+      margin: 0 0 22px;
+      font-size: 30px;
+    }
 
-.card .image {
-  height: 180px;
-  border-radius: 0;
-}
+    .section-subtext {
+      color: #A0A0A0;
+      margin: 0 0 28px;
+      line-height: 1.6;
+      max-width: 650px;
+    }
 
-.card-content {
-  padding: 20px;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
 
-.card p {
-  color: #A0A0A0;
-}
+    .card {
+      display: block;
+      background: #1F1F1F;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #2A2A2A;
+      text-decoration: none;
+      color: #F5F5F5;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
 
-.review {
-  padding: 25px;
-  background: #1F1F1F;
-  border-radius: 12px;
-  border: 1px solid #2A2A2A;
-}
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #3A3A3A;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
 
-.footer {
-  margin-top: 100px;
-  padding: 40px 0;
-  border-top: 1px solid #2A2A2A;
-  text-align: center;
-  color: #A0A0A0;
-}
+    .card .image {
+      height: 190px;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid #2A2A2A;
+    }
 
-@media (max-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
+    .card-content {
+      padding: 22px;
+    }
 
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    .card-content h4 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .card-content p {
+      margin: 0;
+      color: #A0A0A0;
+      line-height: 1.6;
+    }
+
+    .review {
+      padding: 25px;
+      background: #1F1F1F;
+      border-radius: 16px;
+      border: 1px solid #2A2A2A;
+      color: #A0A0A0;
+      line-height: 1.7;
+    }
+
+    .review strong {
+      display: block;
+      color: #F5F5F5;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    /* SLIDESHOW */
+    .slideshow-wrap {
+      background: #1F1F1F;
+      border: 1px solid #2A2A2A;
+      border-radius: 18px;
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .slideshow {
+      position: relative;
+      width: 100%;
+      min-height: 420px;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.45s ease;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .ba-panel {
+      height: 360px;
+      background: linear-gradient(180deg, #262626 0%, #1B1B1B 100%);
+      border: 1px solid #2A2A2A;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #A0A0A0;
+      font-size: 22px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .ba-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 90px;
+    }
+
+    .ba-badge {
+      padding: 12px 16px;
+      border: 1px solid #2A2A2A;
+      border-radius: 999px;
+      background: #0B0B0B;
+      color: #F5F5F5;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .slide-caption {
+      margin-top: 18px;
+      text-align: center;
+      color: #A0A0A0;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+    }
+
+    .slideshow-controls {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .slide-btn {
+      background: #0B0B0B;
+      color: #F5F5F5;
+      border: 1px solid #2A2A2A;
+      border-radius: 999px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .slide-btn:hover {
+      border-color: #4A4A4A;
+      background: #151515;
+    }
+
+    .dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #3A3A3A;
+      transition: 0.2s ease;
+    }
+
+    .dot.active {
+      background: #F5F5F5;
+    }
+
+    .footer {
+      margin-top: 100px;
+      padding: 50px 0;
+      border-top: 1px solid #2A2A2A;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-text {
+      color: #A0A0A0;
+      line-height: 1.7;
+    }
+
+    .socials {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .social-link {
+      width: 46px;
+      height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #1F1F1F;
+      border: 1px solid #2A2A2A;
+      border-radius: 50%;
+      color: #F5F5F5;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-2px);
+      border-color: #4A4A4A;
+      background: #161616;
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 950px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+
+      .ba-center {
+        min-width: auto;
+      }
+
+      .ba-panel {
+        height: 220px;
+      }
+
+      .hero h2 {
+        font-size: 38px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<div class="nav">
-  <div class="container">
-    <a href="index.html"><h1>AM GENERAL SERVICES</h1></a>
-  </div>
-</div>
-
-<div class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h2>Main Headline</h2>
-      <p>Short clean description text goes here to explain what you do</p>
-      <a href="#" class="btn">Get a Quote</a>
-    </div>
-    <div class="image"></div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="container">
-    <h3>Services</h3>
-
-    <div class="grid">
-
-      <a class="card" href="cleaning.html">
-        <div class="image"></div>
-        <div class="card-content">
-          <h4>Cleaning</h4>
-          <p>Description</p>
-        </div>
-      </a>
-
-      <a class="card" href="junk-removal.html">
-        <div class="image"></div>
-        <div class="card-content">
-          <h4>Junk Removal</h4>
-          <p>Description</p>
-        </div>
-      </a>
-
-      <a class="card" href="power-washing.html">
-        <div class="image"></div>
-        <div class="card-content">
-          <h4>Power Washing</h4>
-          <p>Description</p>
-        </div>
-      </a>
-
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <a href="index.html"><h1>AM GENERAL SERVICES</h1></a>
     </div>
   </div>
-</div>
 
-<div class="section">
-  <div class="container">
-    <h3>Reviews</h3>
-
-    <div class="grid">
-      <div class="review">
-        <p>"Amazing service, very professional."</p>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h2>Main Headline</h2>
+        <p>Short clean description text goes here to explain what you do.</p>
+        <a href="#" class="btn">Get a Quote</a>
       </div>
 
-      <div class="review">
-        <p>"Fast, clean, and reliable."</p>
-      </div>
+      <div class="image placeholder">Hero Image</div>
+    </div>
+  </div>
 
-      <div class="review">
-        <p>"Would hire again."</p>
+  <!-- SERVICES -->
+  <div class="section">
+    <div class="container">
+      <h3>Services</h3>
+
+      <div class="grid">
+        <a class="card" href="cleaning.html">
+          <div class="image placeholder">Cleaning Image</div>
+          <div class="card-content">
+            <h4>Cleaning</h4>
+            <p>Description</p>
+          </div>
+        </a>
+
+        <a class="card" href="junk-removal.html">
+          <div class="image placeholder">Junk Removal Image</div>
+          <div class="card-content">
+            <h4>Junk Removal</h4>
+            <p>Description</p>
+          </div>
+        </a>
+
+        <a class="card" href="power-washing.html">
+          <div class="image placeholder">Power Washing Image</div>
+          <div class="card-content">
+            <h4>Power Washing</h4>
+            <p>Description</p>
+          </div>
+        </a>
       </div>
     </div>
   </div>
-</div>
 
-<div class="footer">
-  <div class="container">
-    <p>Contact Info</p>
+  <!-- BEFORE / AFTER SLIDESHOW -->
+  <div class="section">
+    <div class="container">
+      <h3>Before & After</h3>
+      <p class="section-subtext">
+        Showcase completed jobs with a clean side-by-side slider. These are blank placeholders for now and can be replaced with real project photos later.
+      </p>
+
+      <div class="slideshow-wrap">
+        <div class="slideshow" id="slideshow">
+
+          <div class="slide active">
+            <div class="before-after">
+              <div class="ba-panel">Before Photo</div>
+              <div class="ba-center">
+                <div class="ba-badge">Job 01</div>
+              </div>
+              <div class="ba-panel">After Photo</div>
+            </div>
+            <div class="slide-caption">Cleaning project example</div>
+          </div>
+
+          <div class="slide">
+            <div class="before-after">
+              <div class="ba-panel">Before Photo</div>
+              <div class="ba-center">
+                <div class="ba-badge">Job 02</div>
+              </div>
+              <div class="ba-panel">After Photo</div>
+            </div>
+            <div class="slide-caption">Junk removal project example</div>
+          </div>
+
+          <div class="slide">
+            <div class="before-after">
+              <div class="ba-panel">Before Photo</div>
+              <div class="ba-center">
+                <div class="ba-badge">Job 03</div>
+              </div>
+              <div class="ba-panel">After Photo</div>
+            </div>
+            <div class="slide-caption">Power washing project example</div>
+          </div>
+
+        </div>
+
+        <div class="slideshow-controls">
+          <button class="slide-btn" onclick="changeSlide(-1)">Previous</button>
+          <div class="dots" id="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="slide-btn" onclick="changeSlide(1)">Next</button>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+  <!-- REVIEWS -->
+  <div class="section">
+    <div class="container">
+      <h3>Reviews</h3>
+
+      <div class="grid">
+        <div class="review">
+          <strong>Client Name</strong>
+          “Amazing service, very professional.”
+        </div>
+
+        <div class="review">
+          <strong>Client Name</strong>
+          “Fast, clean, and reliable.”
+        </div>
+
+        <div class="review">
+          <strong>Client Name</strong>
+          “Would hire again.”
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="container footer-inner">
+      <div class="footer-text">
+        Footer / Contact Info
+      </div>
+
+      <div class="socials">
+        <!-- Facebook -->
+        <a class="social-link" href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.6-1.6H16.7V3.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V10H7.2v3H10v8h3.5z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a class="social-link" href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zm10.75 1.65a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2z"/>
+          </svg>
+        </a>
+
+        <!-- Twitter / X -->
+        <a class="social-link" href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.6 22H3.5l7.2-8.2L1 2h6.2l4.3 5.8L18.9 2zm-1.1 18h1.7L6.3 3.9H4.5L17.8 20z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function showSlide(index) {
+      slides.forEach((slide) => slide.classList.remove("active"));
+      dots.forEach((dot) => dot.classList.remove("active"));
+
+      if (index >= slides.length) currentSlide = 0;
+      if (index < 0) currentSlide = slides.length - 1;
+
+      slides[currentSlide].classList.add("active");
+      dots[currentSlide].classList.add("active");
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+
+      if (currentSlide >= slides.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+
+      showSlide(currentSlide);
+    }
+
+    setInterval(() => {
+      currentSlide++;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      showSlide(currentSlide);
+    }, 4500);
+  </script>
 
 </body>
 </html>
