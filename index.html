@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AM General Services</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1e3a5f, #2c5282);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 25px;
+      opacity: 0.95;
+    }
+
+    .hero .btn {
+      display: inline-block;
+      background: white;
+      color: #1e3a5f;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .hero .btn:hover {
+      background: #e5e7eb;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #111827;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 28px 22px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #1e3a5f;
+      font-size: 21px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-box,
+    .contact-box {
+      background: white;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-box h2,
+    .contact-box h2 {
+      margin-bottom: 18px;
+      color: #1e3a5f;
+    }
+
+    .contact-info p {
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+
+    .contact-info strong {
+      color: #111827;
+    }
+
+    .footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 22px 15px;
+      margin-top: 30px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <h1>AM General Services</h1>
+      <p>
+        Reliable service for cleaning, junk removal, power washing, and light demo in Aurora, Colorado.
+      </p>
+      <a class="btn" href="tel:7206715011">Call Now</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services">
+        <div class="card">
+          <h3>Cleaning</h3>
+          <p>Dependable cleaning services to help keep your space looking its best.</p>
+        </div>
+        <div class="card">
+          <h3>Junk Removal</h3>
+          <p>Fast and efficient removal of unwanted items, debris, and clutter.</p>
+        </div>
+        <div class="card">
+          <h3>Power Washing</h3>
+          <p>Restore driveways, siding, patios, and more with a clean professional finish.</p>
+        </div>
+        <div class="card">
+          <h3>Light Demo</h3>
+          <p>Safe and careful light demolition work for small residential projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about">
+      <div class="about-box">
+        <h2>About Us</h2>
+        <p>
+          AM General Services is committed to providing quality work and dependable service.
+          We take pride in helping customers with practical solutions for cleanup, exterior washing,
+          and light demolition needs.
+        </p>
+        <br>
+        <p><strong>Owner:</strong> Anthony Montgomery</p>
+        <p><strong>Location:</strong> Aurora, CO</p>
+      </div>
+
+      <div class="contact-box">
+        <h2>Contact Information</h2>
+        <div class="contact-info">
+          <p><strong>Phone:</strong> <a href="tel:7206715011">720-671-5011</a></p>
+          <p><strong>Email:</strong> <a href="mailto:am.generalservices20@gmail.com">am.generalservices20@gmail.com</a></p>
+          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/amgeneralservices720">AMGeneralServices</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p></p>
+  </footer>
+
+</body>
+</html>
+
