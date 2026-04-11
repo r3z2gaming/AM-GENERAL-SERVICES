@@ -28,7 +28,7 @@
     }
 
     .nav {
-      padding: 20px 0;
+      padding: 18px 0;
       border-bottom: 1px solid #2A2A2A;
       background: #0B0B0B;
       position: sticky;
@@ -37,26 +37,10 @@
     }
 
     .nav-inner {
-      display: flex;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
-      justify-content: space-between;
       gap: 20px;
-    }
-
-    .brand {
-      color: #F5F5F5;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .brand h1 {
-      margin: 0;
-      font-size: 24px;
-      letter-spacing: 0.5px;
-    }
-
-    .desktop-links {
-      display: none;
     }
 
     .hamburger {
@@ -87,6 +71,45 @@
       background: #F5F5F5;
       border-radius: 999px;
       transition: 0.2s ease;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .brand {
+      color: #F5F5F5;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .desktop-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .desktop-links a {
+      color: #A0A0A0;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .desktop-links a:hover {
+      color: #F5F5F5;
     }
 
     .mobile-menu {
@@ -220,6 +243,8 @@
       font-size: 18px;
       letter-spacing: 1px;
       text-transform: uppercase;
+      text-align: center;
+      padding: 20px;
     }
 
     .section {
@@ -462,6 +487,20 @@
       }
     }
 
+    @media (max-width: 1100px) {
+      .nav-inner {
+        grid-template-columns: auto 1fr;
+      }
+
+      .desktop-links {
+        display: none;
+      }
+
+      .brand-wrap {
+        justify-content: flex-start;
+      }
+    }
+
     @media (max-width: 950px) {
       .hero-grid,
       .grid,
@@ -485,26 +524,56 @@
         font-size: 40px;
       }
     }
+
+    @media (max-width: 700px) {
+      .brand h1 {
+        font-size: 19px;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero h2 {
+        font-size: 34px;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
-        <a href="index.html" class="brand"><h1>AM GENERAL SERVICES</h1></a>
-
         <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" type="button">
           <span></span>
           <span></span>
           <span></span>
         </button>
+
+        <div class="brand-wrap">
+          <a href="index.html" class="brand"><h1>AM GENERAL SERVICES</h1></a>
+        </div>
+
+        <div class="desktop-links">
+          <a href="index.html">Home</a>
+          <a href="#services">Services</a>
+          <a href="#results">Before & After</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+          <a href="junk-removal.html">Junk Removal</a>
+          <a href="cleaning.html">Cleaning</a>
+          <a href="landscaping.html">Landscaping</a>
+        </div>
       </div>
 
+      <!-- HAMBURGER MENU -->
       <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-section">
           <h4 class="mobile-menu-title">Main Navigation</h4>
           <div class="mobile-menu-links">
+            <a href="index.html" onclick="closeMenu()">Home</a>
             <a href="#services" onclick="closeMenu()">Services</a>
             <a href="#results" onclick="closeMenu()">Before & After</a>
             <a href="#reviews" onclick="closeMenu()">Reviews</a>
@@ -522,18 +591,20 @@
         </div>
 
         <div class="mobile-menu-section">
-          <h4 class="mobile-menu-title">Temporary Categories</h4>
+          <h4 class="mobile-menu-title">Placeholders</h4>
           <div class="mobile-menu-links">
             <a href="#" class="temp-link">Gallery Placeholder</a>
             <a href="#" class="temp-link">Pricing Placeholder</a>
             <a href="#" class="temp-link">FAQ Placeholder</a>
             <a href="#" class="temp-link">Booking Placeholder</a>
+            <a href="#" class="temp-link">About Placeholder</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- HERO -->
   <div class="hero">
     <div class="container hero-grid">
       <div>
@@ -553,11 +624,12 @@
     </div>
   </div>
 
+  <!-- SERVICES -->
   <div class="section" id="services">
     <div class="container">
       <h3>Our Main Services</h3>
       <p class="section-subtext">
-        These are the three main categories the site is built around right now. Each one can link to its own page and each one has space for its own before-and-after showcase.
+        These are the three main categories the site is built around right now. Each one links to its own page and each one has space for its own before-and-after showcase.
       </p>
 
       <div class="grid">
@@ -588,6 +660,7 @@
     </div>
   </div>
 
+  <!-- BEFORE / AFTER -->
   <div class="section" id="results">
     <div class="container">
       <h3>Before & After Results</h3>
@@ -667,6 +740,7 @@
     </div>
   </div>
 
+  <!-- REVIEWS -->
   <div class="section" id="reviews">
     <div class="container">
       <h3>Reviews</h3>
@@ -693,6 +767,7 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <div class="footer" id="contact">
     <div class="container footer-inner">
       <div class="footer-text">
