@@ -56,20 +56,7 @@
     }
 
     .desktop-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .desktop-links a {
-      color: #A0A0A0;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.2s ease;
-    }
-
-    .desktop-links a:hover {
-      color: #F5F5F5;
+      display: none;
     }
 
     .hamburger {
@@ -78,13 +65,14 @@
       border: 1px solid #2A2A2A;
       border-radius: 12px;
       background: #1F1F1F;
-      display: none;
+      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 5px;
       cursor: pointer;
       transition: 0.2s ease;
+      padding: 0;
     }
 
     .hamburger:hover {
@@ -475,14 +463,6 @@
     }
 
     @media (max-width: 950px) {
-      .desktop-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
       .hero-grid,
       .grid,
       .reviews-grid {
@@ -505,37 +485,22 @@
         font-size: 40px;
       }
     }
-
-    @media (min-width: 951px) {
-      .mobile-menu {
-        display: none !important;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <div class="nav">
     <div class="container">
       <div class="nav-inner">
         <a href="index.html" class="brand"><h1>AM GENERAL SERVICES</h1></a>
 
-        <div class="desktop-links">
-          <a href="#services">Services</a>
-          <a href="#results">Before & After</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" type="button">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
 
-      <!-- MOBILE / HAMBURGER MENU -->
       <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-section">
           <h4 class="mobile-menu-title">Main Navigation</h4>
@@ -569,7 +534,6 @@
     </div>
   </div>
 
-  <!-- HERO -->
   <div class="hero">
     <div class="container hero-grid">
       <div>
@@ -589,7 +553,6 @@
     </div>
   </div>
 
-  <!-- SERVICES -->
   <div class="section" id="services">
     <div class="container">
       <h3>Our Main Services</h3>
@@ -625,7 +588,6 @@
     </div>
   </div>
 
-  <!-- BEFORE / AFTER BY CATEGORY -->
   <div class="section" id="results">
     <div class="container">
       <h3>Before & After Results</h3>
@@ -705,7 +667,6 @@
     </div>
   </div>
 
-  <!-- REVIEWS -->
   <div class="section" id="reviews">
     <div class="container">
       <h3>Reviews</h3>
@@ -732,7 +693,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer" id="contact">
     <div class="container footer-inner">
       <div class="footer-text">
